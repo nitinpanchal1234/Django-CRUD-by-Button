@@ -5,4 +5,4 @@ from .models import Employee
 @admin.register(Employee)
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'email', 'password', 'mobile', 'salary', 'bonus']
+    list_display = ['id', 'name', 'email', 'password', 'mobile', 'salary', 'bonus', 'profile_image', 'dob', 'address', 'cv']

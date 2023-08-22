@@ -15,15 +15,19 @@ def add_action(request):
         mobile = request.POST['mobile']
         salary = request.POST['salary']
         bonus = request.POST['bonus']
+        profile_image = request.POST['profile_image']
+        dob = request.POST['dob']
+        address = request.POST['address']
+        cv = request.POST['cv']
 
-        add_emp_data = Employee.objects.create(name=name, email=email, password=password, mobile=mobile, salary=salary, bonus=bonus)
+        add_emp_data = Employee.objects.create(name=name, email=email, password=password, mobile=mobile, salary=salary, bonus=bonus, profile_image=profile_image, dob=dob, address=address, cv=cv)
 
         emp_data = Employee.objects.all()
         dict = {
             'emp_data': emp_data
         }
         return render(request, 'view_all_emp.html', dict)
-    
+        
 def view_all_emp(request):
         emp_data = Employee.objects.all()
         dict = {
@@ -45,6 +49,10 @@ def update_action(request, id):
         mobile = request.POST['mobile']
         salary = request.POST['salary']
         bonus = request.POST['bonus']
+        profile_image = request.POST['profile_image']
+        dob = request.POST['dob']
+        address = request.POST['address']
+        cv = request.POST['cv']
 
         add_emp_data = Employee.objects.get(id=id)
 
@@ -54,6 +62,10 @@ def update_action(request, id):
         add_emp_data.mobile = mobile
         add_emp_data.salary = salary
         add_emp_data.bonus = bonus
+        add_emp_data.profile_image = profile_image
+        add_emp_data.dob = dob
+        add_emp_data.address = address
+        add_emp_data.cv = cv
         add_emp_data.save()
 
         emp_data = Employee.objects.all()
@@ -72,13 +84,3 @@ def delete_emp(request, id):
             'emp_data': emp_data
         }
         return render(request, 'view_all_emp.html', dict)
-
-
-          
-     
-
-
-     
-
-
-
