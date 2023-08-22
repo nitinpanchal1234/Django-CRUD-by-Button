@@ -19,7 +19,7 @@
         </style>
     </head>
     <body>
-        <h1 style="text-align: center; color:red">Add Employee Here</h1> <hr>
+        <h1 style="text-align: center; color:rgb(236, 4, 4)">Add Employee Here</h1> <hr>
         <form method="POST" action="{% url 'add_action' %}">
             {% csrf_token %}
             <div class="form-group">
@@ -53,8 +53,8 @@
                     name="bonus" placeholder="Enter Bonus">
             </div>
             <div>
-                <label for="id_profile_image">Profile Image</label><br>
-                <input type="file" name="profile_image" id="id_profile_image">
+                <label for="profile_image">Profile Image</label><br>
+                <input type="file" name="profile_image" id="profile_image">
             </div><br>
             <div class="form-group">
                 <label for="dob">Date Of Birth</label>
@@ -67,8 +67,8 @@
                     name="address" placeholder="Enter Address">
             </div>
             <div>
-                <label for="id_cv">CV</label><br>
-                <input type="file" name="cv" value="{{emp_data.cv}}" id="id_cv">
+                <label for="cv">CV</label><br>
+                <input type="file" name="cv" id="cv">
             </div><br>
             <button type="submit" class="btn btn-primary">Submit</button>
             <a class="btn btn-primary" href="/" role="button">Back</a>
